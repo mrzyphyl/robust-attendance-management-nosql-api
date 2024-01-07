@@ -80,7 +80,7 @@ const teacherSubjectSchema = mongoose.Schema({
     timestamps: true
 })
 
-
+//Schema for Students Block and Attendance
 const subjectBlockSchema = mongoose.Schema({
     block_number: {
         type: String,
