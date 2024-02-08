@@ -15,12 +15,12 @@ app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
-app.use('/api/student-user', require('./routes/Student/studentUserRoutes'))
-app.use('/api/professor-user', require('./routes/Teacher/teacherUserRoutes'))
-app.use('/api/student/subjects', require('./routes/Student/studentSubjectRoutes'))
-app.use('/api/professor/subjects', require('./routes/Teacher/teacherSubjectsRoutes'))
-app.use('/api/student/attendance', require('./routes/Student/studentAttendanceRoutes'))
-app.use('/api/professor/attendance', require('./routes/Teacher/teacherAttendanceRoutes'))
+// app.use('/api/student-user', require('./routes/Student/studentUserRoutes'))
+// app.use('/api/professor-user', require('./routes/Teacher/teacherUserRoutes'))
+// app.use('/api/student/subjects', require('./routes/Student/studentSubjectRoutes'))
+// app.use('/api/professor/subjects', require('./routes/Teacher/teacherSubjectsRoutes'))
+// app.use('/api/student/attendance', require('./routes/Student/studentAttendanceRoutes'))
+// app.use('/api/professor/attendance', require('./routes/Teacher/teacherAttendanceRoutes'))
 
 app.use(errorHandler)
 
