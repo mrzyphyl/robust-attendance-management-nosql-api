@@ -2,62 +2,62 @@ const mongoose = require('mongoose')
 
 //Main Schema for Student User
 const studentUserSchema = mongoose.Schema({
-    firstname: {
+    FirstName: {
         type: String,
         required: [true, 'Please add your First Name']
     },
-    middlename: {
+    MiddleName: {
         type: String,
         required: [true, 'Please add your Middle Name']
     },
-    lastname: {
+    LastName: {
         type: String,
         required: [true, 'Please add your Last Name']
     },
-    suffix: {
+    Suffix: {
         type: String,
     },
-    age: {
-        type: String,
+    Age: {
+        type: Number,
         required: [true, 'Please add your Age']
     },
-    birthday: {
-        type: String,
+    BirthDay: {
+        type: Date,
         required: [true, 'Please add your Birthday']
     },
-    gender: {
+    Gender: {
         type: String,
         required: [true, 'Please add your Gender']
     },
-    address: {
+    Address: {
         type: String,
         required: [true, 'Please add your Complete Address']
     },
-    user_status: {
+    MaritalStatus: {
         type: String,
         required: [true, 'Please add your Marital Status']
     },
-    student_number: {
+    StudentNumber: {
         type: String,
         required: [true, 'Please add your Student Number']
     },
-    department: {
+    Department: {
         type: String,
         required: [true, 'Please add your Department']
     },
-    email: {
+    Email: {
         type: String,
         required: [true, 'Please add your Email']
     },
-    password: {
+    Password: {
         type: String,
         required: [true, 'Please add your Password']
     },
-    role: {
+    Role: {
         type: String,
         default: 'student'
     },
-    subjects: [studentSubjectSchema],
+    Subjects: [studentSubjectSchema],
 }, {
     timestamps: true
 })
@@ -66,38 +66,38 @@ module.exports = mongoose.model('StudentUser', studentUserSchema)
 
 //Schema for Student Subject
 const studentSubjectSchema = mongoose.Schema({
-    subject_code: {
+    SubjectCode: {
         type: String,
         required: [true, 'Please add your Subject Code']
     },
-    subject_name: {
+    SubjectName: {
         type: String,
         required: [true, 'Please add your Subject Name']
     },
-    subject_time: {
-        type: String,
+    SubjectTime: {
+        type: Date,
         required: [true, 'Please add your Subject Time']
     },
-    subject_instructor: {
+    SubjectInstructor: {
         type: String,
         required: [true, 'Please add your Subject Instructor']
     },
-    subject_block: {
+    SubjectBlock: {
         type: String,
         required: [true, 'Please add your Subject Block']
     },
-    attendance: [studentAttendanceSchema],
+    Attendance: [studentAttendanceSchema],
 }, {
     timestamps: true
 })
 
 //Schema for Students Attendance
 const studentAttendanceSchema = mongoose.Schema({
-    isPresent: {
+    IsPresent: {
         type: Boolean,
         default: undefined
     },
-    attendanceTimeIn: {
+    AttendanceTimeIn: {
         type: Date,
         default: Date.now
     },

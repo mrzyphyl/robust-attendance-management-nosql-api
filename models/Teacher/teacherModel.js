@@ -2,51 +2,51 @@ const mongoose = require('mongoose')
 
 //Main Schema for Teacher User
 const teacherUserSchema = mongoose.Schema({
-    firstname: {
+    FirstName: {
         type: String,
         required: [true, 'Please add your First Name']
     },
-    middlename: {
+    MiddleName: {
         type: String,
         required: [true, 'Please add your Middle Name']
     },
-    lastname: {
+    LastName: {
         type: String,
         required: [true, 'Please add your Last Name']
     },
-    age: {
-        type: String,
+    Age: {
+        type: Number,
         required: [true, 'Please add your Age']
     },
-    birthday: {
-        type: String,
+    Birthday: {
+        type: Date,
         required: [true, 'Please add your Birthday']
     },
-    gender: {
+    Gender: {
         type: String,
         required: [true, 'Please add your Gender']
     },
-    address: {
+    Asddress: {
         type: String,
         required: [true, 'Please add your Complete Address']
     },
-    user_status: {
+    UserStatus: {
         type: String,
         required: [true, 'Please add your Marital Status']
     },
-    student_number: {
+    StudentNumber: {
         type: String,
         required: [true, 'Please add your Student Number']
     },
-    department: {
+    Department: {
         type: String,
         required: [true, 'Please add your Department']
     },
-    email: {
+    Email: {
         type: String,
         required: [true, 'Please add your Email']
     },
-    password: {
+    Password: {
         type: String,
         required: [true, 'Please add your Password']
     },
@@ -54,7 +54,7 @@ const teacherUserSchema = mongoose.Schema({
         type: String,
         default: 'student'
     },
-    subjects: [teacherSubjectSchema],
+    Subjects: [teacherSubjectSchema],
 }, {
     timestamps: true
 })
@@ -63,30 +63,30 @@ module.exports = mongoose.model('TeacherUser', teacherUserSchema)
 
 //Schema for Teacher Subjects
 const teacherSubjectSchema = mongoose.Schema({
-    subject_code: {
+    SubjectCode: {
         type: String,
         required: [true, 'Please add your Subject Code']
     },
-    subject_name: {
+    SubjectName: {
         type: String,
         required: [true, 'Please add your Subject Name']
     },
-    subject_time: {
+    SubjectTime: {
         type: String,
         required: [true, 'Please add your Subject Time']
     },
-    subject_block:[subjectBlockSchema],
+    SubjectBlock:[subjectBlockSchema],
 }, {
     timestamps: true
 })
 
 //Schema for Students Block and Attendance
 const subjectBlockSchema = mongoose.Schema({
-    block_number: {
+    BlockNumber: {
         type: String,
         required: [true, 'Please add a Block Number']
     },
-    students_enrolled: [{
+    StudentsEnrolled: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'StudentUser'
     }]
