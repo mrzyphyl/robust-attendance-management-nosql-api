@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
-//Main Schema for Teacher User
-const teacherUserSchema = mongoose.Schema({
+//Main Schema for Teachers
+const TeacherUserSchema = mongoose.Schema({
     FirstName: {
         type: String,
         required: [true, 'Please add your First Name']
@@ -62,7 +62,7 @@ const teacherUserSchema = mongoose.Schema({
 module.exports = mongoose.model('TeacherUser', teacherUserSchema)
 
 //Schema for Teacher Subjects
-const teacherSubjectSchema = mongoose.Schema({
+const TeacherSubjectSchema = mongoose.Schema({
     SubjectCode: {
         type: String,
         required: [true, 'Please add your Subject Code']
@@ -81,7 +81,7 @@ const teacherSubjectSchema = mongoose.Schema({
 })
 
 //Schema for Students Block and Attendance
-const subjectBlockSchema = mongoose.Schema({
+const SubjectBlockSchema = mongoose.Schema({
     BlockNumber: {
         type: String,
         required: [true, 'Please add a Block Number']
@@ -91,3 +91,9 @@ const subjectBlockSchema = mongoose.Schema({
         ref: 'StudentUser'
     }]
 })
+
+module.exports = {
+    TeacherUserSchema,
+    TeacherSubjectSchema,
+    SubjectBlockSchema
+};

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
-//Main Schema for Student User
-const studentUserSchema = mongoose.Schema({
+//Main Schema for Students
+const StudentUserSchema = mongoose.Schema({
     FirstName: {
         type: String,
         required: [true, 'Please add your First Name']
@@ -65,7 +65,7 @@ const studentUserSchema = mongoose.Schema({
 module.exports = mongoose.model('StudentUser', studentUserSchema)
 
 //Schema for Student Subject
-const studentSubjectSchema = mongoose.Schema({
+const StudentSubjectSchema = mongoose.Schema({
     SubjectCode: {
         type: String,
         required: [true, 'Please add your Subject Code']
@@ -92,7 +92,7 @@ const studentSubjectSchema = mongoose.Schema({
 })
 
 //Schema for Students Attendance
-const studentAttendanceSchema = mongoose.Schema({
+const StudentAttendanceSchema = mongoose.Schema({
     IsPresent: {
         type: Boolean,
         default: undefined
@@ -104,3 +104,9 @@ const studentAttendanceSchema = mongoose.Schema({
 }, {
     timestamps: true
 })
+
+module.exports = {
+    StudentUserSchema,
+    StudentSubjectSchema,
+    StudentAttendanceSchema
+};

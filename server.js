@@ -1,12 +1,12 @@
 const express = require('express')
 const colors = require('colors')
-const { errorHandler } = require('./middlewares/errorHandler')
-const connectDB = require('./database/database')
+const { ErrorHandler } = require('./Middlewares/ErrorHandler')
+const ConnectDB = require('./Database/Database')
 const cors = require('cors')
 const dotenv = require('dotenv').config()
 const port = process.env.PORT || 5000
 
-connectDB()
+ConnectDB()
 
 const app = express()
 
@@ -22,6 +22,6 @@ app.use(express.urlencoded({ extended: false }))
 // app.use('/api/student/attendance', require('./routes/Student/studentAttendanceRoutes'))
 // app.use('/api/professor/attendance', require('./routes/Teacher/teacherAttendanceRoutes'))
 
-app.use(errorHandler)
+app.use(ErrorHandler)
 
 app.listen(port, () => console.log(`Server started on port ${port}`))
