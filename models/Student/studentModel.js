@@ -57,12 +57,10 @@ const StudentUserSchema = mongoose.Schema({
         type: String,
         default: 'student'
     },
-    Subjects: [studentSubjectSchema],
+    Subjects: [StudentSubjectSchema],
 }, {
     timestamps: true
 })
-
-module.exports = mongoose.model('StudentUser', studentUserSchema)
 
 //Schema for Student Subject
 const StudentSubjectSchema = mongoose.Schema({
@@ -86,7 +84,7 @@ const StudentSubjectSchema = mongoose.Schema({
         type: String,
         required: [true, 'Please add your Subject Block']
     },
-    Attendance: [studentAttendanceSchema],
+    Attendance: [StudentAttendanceSchema],
 }, {
     timestamps: true
 })

@@ -54,12 +54,10 @@ const TeacherUserSchema = mongoose.Schema({
         type: String,
         default: 'student'
     },
-    Subjects: [teacherSubjectSchema],
+    Subjects: [TeacherSubjectSchema],
 }, {
     timestamps: true
 })
-
-module.exports = mongoose.model('TeacherUser', teacherUserSchema)
 
 //Schema for Teacher Subjects
 const TeacherSubjectSchema = mongoose.Schema({
@@ -75,7 +73,7 @@ const TeacherSubjectSchema = mongoose.Schema({
         type: String,
         required: [true, 'Please add your Subject Time']
     },
-    SubjectBlock:[subjectBlockSchema],
+    SubjectBlock:[SubjectBlockSchema],
 }, {
     timestamps: true
 })
